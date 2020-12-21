@@ -5,6 +5,6 @@ let fact n = if n < 2
         else fact (i + 1, (i + 1) * r)
     in fact (2, 2);;
 
-let comb (m, n) = 
+let rec comb (m, n) =
     if n = 0 || m = n then 1
-    else fact m / (fact n * fact (m-n));;
+    else comb (m-1, n-1) + comb (m-1, n);;

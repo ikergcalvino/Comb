@@ -6,7 +6,7 @@ let fact n = if n < 2
     in fact (2, 2);;
 
 let rec comb (m, n) =
-    if n < 0 || m > n then 0
+    if n < 0 || m < n then 0
     else if n = 0 || m = n then 1
     else comb (m-1, n-1) + comb (m-1, n);;
 (* optimización de comb gracias al uso de la Regla de Pascal *)
